@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ArraysAndLists
 {
@@ -10,13 +11,38 @@ namespace ArraysAndLists
 
             // Create an int Array and populate numbers 1-10
 
-            var numbers = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            var numbers = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
             /* Create two Lists of type int.
              * Name one List "evens"
              * Name the other List "odds"
              */
+        
+            var evens = new List<int>();
+            var odds = new List<int>();
+            foreach (int num in numbers) 
+            {
+                if (num % 2 == 0)
+                {
+                    evens.Add(num);
+                }
+                else 
+                {
+                   odds.Add(num);
+                }
+            }
+            Console.WriteLine("Here are all of the even numbers:");
 
+            foreach (var evenNum in evens)
+            {
+                Console.WriteLine(evenNum);
+            }
+
+            Console.WriteLine("Here are all of the odd numbers:");
+            foreach (var oddNum in odds)
+            { 
+                Console.WriteLine(oddNum);
+            }
             /* Using either a foreach or for loop,
              * nest an if statement to check to see
              *  if a number is even or odd.
